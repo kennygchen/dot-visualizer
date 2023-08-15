@@ -1,0 +1,23 @@
+{
+  "name": "dot-visualizer",
+  "version": "1.0.0",
+  "description": "Graph visualizer for dot files",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennygchen/dot-visualizer.git"
+  },
+  "author": "Kenny Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.~com/kennygchen/dot-visualizer/issues"
+  },
+  "homepage": "https://github.com/kennygchen/dot-visualizer#readme",
+  "devDependencies": {
+    "electron": "^26.0.0"
+  }
+}
