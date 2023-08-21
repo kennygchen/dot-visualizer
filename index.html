@@ -9,16 +9,45 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>DOT Visualizer</title>
     <script src="js/renderer.js" defer></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.js"></script>
   </head>
-  <body>
+  <body">
     <h1>DOT Visualizer</h1>
-    <input id="input" type="file">
+    <h2>Input</h2>
+    <form>
+      <label for="input">Graphviz Definition</label>
+      <textarea id="input" rows="5" style="display: block" onKeyUp="render();">
+/* Example */
+digraph {
+  digraph  {a -> c}
+}
+      </textarea>
+    </form>
+
+    <h2>Graph Visualization</h2>
+    <svg width="800" height="600">
+      <g />
+    </svg>
+    <!-- <script>
+      var input = document.querySelector("#input");
+      d3.select("svg g").graphviz().renderDot(input);
+    </script> -->
+    <!-- <input id="input" type="file"> -->
+    <!-- <svg id="graphContainer"> -->
+    <!-- <g/> -->
+    <!-- </svg> -->
   </body>
   <script src="js/lib/d3.v5.min.js"></script>
   <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
   <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
   <div id="graph" style="text-align: center"></div>
   <script>
-    d3.select("#graph").graphviz().renderDot("digraph  {a -> b a -> c}");
+    d3.select("svg g").graphviz().renderDot("digraph  {a -> c}");
+    // var input = document.querySelector("#input");
+    // function render() {
+    //   d3.select("#graph").graphviz().renderDot(input);
+    // }
   </script>
 </html>
