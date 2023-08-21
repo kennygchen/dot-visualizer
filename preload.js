@@ -1,7 +1,8 @@
-const { contextBridge } = require('electron')
+// import { graphviz } from "d3-graphviz";
+const { contextBridge } = require("electron");
 
-contextBridge.exposeInMainWorld('versions', {
-  node: () => process.versions.node,
-  chrome: () => process.versions.chrome,
-  electron: () => process.versions.electron
-})
+contextBridge.exposeInMainWorld("renderDot", {
+  render: (id) => d3.select(id).graphviz().renderDot("digraph  {a -> b a -> c}"),
+});
+
+// d3.select("#graph").graphviz().renderDot("digraph  {a -> b a -> c}");
